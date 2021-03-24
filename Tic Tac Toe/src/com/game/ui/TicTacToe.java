@@ -25,6 +25,7 @@ public class TicTacToe {
 
 	/**
 	 * Launch the application.
+	 * Hey This is Vaibhav
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -188,7 +189,7 @@ public class TicTacToe {
 			}
 
 		});
-		btn_1.setBounds(104, 124, 80, 66);
+		btn_1.setBounds(104, 13, 80, 66);
 		frame.getContentPane().add(btn_1);
 
 		JButton btn_2 = new JButton("");
