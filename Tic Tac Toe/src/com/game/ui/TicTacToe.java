@@ -1,6 +1,7 @@
 package com.game.ui;
 
 import java.awt.EventQueue;
+import java.awt.Frame;
 import java.awt.Image;
 
 import javax.swing.JFrame;
@@ -11,7 +12,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 import javax.swing.border.LineBorder;
+
 
 import com.game.beans.ModelTicTacToe;
 
@@ -32,17 +35,25 @@ public class TicTacToe {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+		
 				try {
+					Splash splash = new Splash();
 					TicTacToe window = new TicTacToe();
-					window.frame.setVisible(true);
+					splash.setVisible(true);
+					
+					for (int i = 0; i <= 100; i++) {
+						Thread.sleep(i);
+						splash.setProgressBar(i);
+						splash.setLblpercentage(Integer.toString(i)+"%");
+						if (i == 100) {
+							splash.dispose();
+							window.frame.setVisible(true);
+						}
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -69,85 +80,85 @@ public class TicTacToe {
 
 	private void winner() {
 		JFrame f = new JFrame();
-		if (model.getBtn0()==("X") && model.getBtn1()==("X") && model.getBtn2()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn0() == ("X") && model.getBtn1() == ("X") && model.getBtn2() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn0()==("O") && model.getBtn1()==("O") && model.getBtn2()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn0() == ("O") && model.getBtn1() == ("O") && model.getBtn2() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn3()==("X") && model.getBtn4()==("X") && model.getBtn5()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn3() == ("X") && model.getBtn4() == ("X") && model.getBtn5() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn3()==("O") && model.getBtn4()==("O") && model.getBtn5()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn3() == ("O") && model.getBtn4() == ("O") && model.getBtn5() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn6()==("X") && model.getBtn7()==("X") && model.getBtn8()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn6() == ("X") && model.getBtn7() == ("X") && model.getBtn8() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn6()==("O") && model.getBtn7()==("O") && model.getBtn8()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn6() == ("O") && model.getBtn7() == ("O") && model.getBtn8() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn0()==("X") && model.getBtn3()==("X") && model.getBtn6()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn0() == ("X") && model.getBtn3() == ("X") && model.getBtn6() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn0()==("O") && model.getBtn3()==("O") && model.getBtn6()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn0() == ("O") && model.getBtn3() == ("O") && model.getBtn6() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn0()==("X") && model.getBtn4()==("X") && model.getBtn8()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn0() == ("X") && model.getBtn4() == ("X") && model.getBtn8() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn0()==("O") && model.getBtn4()==("O") && model.getBtn8()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn0() == ("O") && model.getBtn4() == ("O") && model.getBtn8() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn2()==("X") && model.getBtn5()==("X") && model.getBtn8()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn2() == ("X") && model.getBtn5() == ("X") && model.getBtn8() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn2()==("O") && model.getBtn5()==("O") && model.getBtn8()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn2() == ("O") && model.getBtn5() == ("O") && model.getBtn8() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn1()==("X") && model.getBtn4()==("X") && model.getBtn8()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn1() == ("X") && model.getBtn4() == ("X") && model.getBtn8() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn1()==("O") && model.getBtn4()==("O") && model.getBtn8()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn1() == ("O") && model.getBtn4() == ("O") && model.getBtn8() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
-		if (model.getBtn2()==("X") && model.getBtn4()==("X") && model.getBtn6()==("X")) {
-			JOptionPane.showMessageDialog(f,"Player X Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountX(model.getCountX()+1);
-				score();
+		if (model.getBtn2() == ("X") && model.getBtn4() == ("X") && model.getBtn6() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountX(model.getCountX() + 1);
+			score();
 		}
-		if (model.getBtn2()==("O") && model.getBtn4()==("O") && model.getBtn6()==("O")) {
-			JOptionPane.showMessageDialog(f,"Player O Won.","Tic Tac Toe",JOptionPane.WARNING_MESSAGE);   
-				model.setCountO(model.getCountO()+1);
-				score();
+		if (model.getBtn2() == ("O") && model.getBtn4() == ("O") && model.getBtn6() == ("O")) {
+			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			model.setCountO(model.getCountO() + 1);
+			score();
 		}
 	}
 
@@ -186,7 +197,6 @@ public class TicTacToe {
 					btn_1.setBackground(new Color(135, 206, 250));
 				}
 				player();
-				System.out.println(btn_1.getText());
 				model.setBtn1(btn_1.getText());
 				winner();
 			}
@@ -321,27 +331,27 @@ public class TicTacToe {
 				model.setBtn5(null);
 				model.setBtn7(null);
 				model.setBtn8(null);
-				
+
 				btn_0.setText(null);
 				btn_1.setText(null);
 				btn_2.setText(null);
-				
+
 				btn_3.setText(null);
 				btn_4.setText(null);
 				btn_5.setText(null);
-				
+
 				btn_6.setText(null);
 				btn_7.setText(null);
 				btn_8.setText(null);
-				
+
 				btn_0.setBackground(Color.LIGHT_GRAY);
 				btn_1.setBackground(Color.LIGHT_GRAY);
 				btn_2.setBackground(Color.LIGHT_GRAY);
-				
+
 				btn_3.setBackground(Color.LIGHT_GRAY);
 				btn_4.setBackground(Color.LIGHT_GRAY);
 				btn_5.setBackground(Color.LIGHT_GRAY);
-				
+
 				btn_6.setBackground(Color.LIGHT_GRAY);
 				btn_7.setBackground(Color.LIGHT_GRAY);
 				btn_8.setBackground(Color.LIGHT_GRAY);
@@ -349,7 +359,7 @@ public class TicTacToe {
 		});
 		Image btReset = new ImageIcon(this.getClass().getResource("/reset.jpg")).getImage();
 		btnReset.setIcon(new ImageIcon(btReset));
-		
+
 		JButton btnExit = new JButton("");
 		btnExit.setBackground(Color.RED);
 		btnExit.addActionListener(new ActionListener() {
@@ -389,103 +399,82 @@ public class TicTacToe {
 		Image img = new ImageIcon(this.getClass().getResource("/Logo.gif")).getImage();
 		logo.setIcon(new ImageIcon(img));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addComponent(logo, GroupLayout.PREFERRED_SIZE, 855, Short.MAX_VALUE)
-					.addGap(167))
+						.addComponent(logo, GroupLayout.PREFERRED_SIZE, 855, Short.MAX_VALUE).addGap(167))
+				.addGroup(
+						groupLayout.createSequentialGroup().addGap(114)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+										.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+										.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+								.addGap(12)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+										.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+										.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+								.addGap(12)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+										.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+										.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+								.addGap(104)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(panel, GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+										.addGroup(groupLayout.createSequentialGroup().addGap(31)
+												.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 80, Short.MAX_VALUE)
+												.addGap(67)
+												.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 86, Short.MAX_VALUE)
+												.addGap(40)))
+								.addGap(161)));
+		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(114)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-						.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-						.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-					.addGap(12)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-						.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-						.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-					.addGap(12)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-						.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-						.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-					.addGap(104)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(31)
-							.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 80, Short.MAX_VALUE)
-							.addGap(67)
-							.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 86, Short.MAX_VALUE)
-							.addGap(40)))
-					.addGap(161))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addComponent(logo, GroupLayout.PREFERRED_SIZE, 293, Short.MAX_VALUE)
-					.addGap(24)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-							.addGap(13)
-							.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-							.addGap(12)
-							.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-							.addGap(13)
-							.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-							.addGap(12)
-							.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-							.addGap(14)
-							.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-							.addGap(13)
-							.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(31)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 25, Short.MAX_VALUE)
-								.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 25, Short.MAX_VALUE))))
-					.addGap(112))
-		);
+						.addComponent(logo, GroupLayout.PREFERRED_SIZE, 293, Short.MAX_VALUE).addGap(24)
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE).addGap(13)
+										.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(12)
+										.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE).addGap(13)
+										.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(12)
+										.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(14)
+										.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(13)
+										.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addGap(31)
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 25, Short.MAX_VALUE)
+												.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 25,
+														Short.MAX_VALUE))))
+						.addGap(112)));
 		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(9)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(gl_panel
+				.createSequentialGroup().addGap(9)
+				.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(lblone, GroupLayout.PREFERRED_SIZE, 88, Short.MAX_VALUE)
-							.addGap(26)
-							.addComponent(txtplayerOne))
+								.addComponent(lblone, GroupLayout.PREFERRED_SIZE, 88, Short.MAX_VALUE).addGap(26)
+								.addComponent(txtplayerOne))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(lbltwo, GroupLayout.PREFERRED_SIZE, 88, Short.MAX_VALUE)
-							.addGap(26)
-							.addComponent(txtplayerTwo, GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
-					.addGap(59))
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(58)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(3)
-							.addComponent(lblone, GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE))
-						.addComponent(txtplayerOne))
-					.addGap(37)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(3)
-							.addComponent(lbltwo, GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE))
-						.addComponent(txtplayerTwo))
-					.addGap(70))
-		);
+								.addComponent(lbltwo, GroupLayout.PREFERRED_SIZE, 88, Short.MAX_VALUE).addGap(26)
+								.addComponent(txtplayerTwo, GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
+				.addGap(59)));
+		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup().addGap(58)
+						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup().addGap(3).addComponent(lblone,
+										GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE))
+								.addComponent(txtplayerOne))
+						.addGap(37)
+						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup().addGap(3).addComponent(lbltwo,
+										GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE))
+								.addComponent(txtplayerTwo))
+						.addGap(70)));
 		panel.setLayout(gl_panel);
 		frame.getContentPane().setLayout(groupLayout);
 	}
