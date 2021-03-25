@@ -2,11 +2,16 @@ package com.game.ui;
 
 
 
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Splash extends JFrame {
 	/**
@@ -55,20 +60,27 @@ public class Splash extends JFrame {
 		setLocationRelativeTo(null);
 		
 		frame = new JPanel();
+		frame.setBackground(Color.BLACK);
 		frame.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(frame);
 		frame.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Code to Contribute to be displayed here");
-		lblNewLabel.setBounds(97, 46, 255, 104);
-		frame.add(lblNewLabel);
+		JLabel lblctc = new JLabel("");
+		Image ctc = new ImageIcon(this.getClass().getResource("/CTC.jpg")).getImage();
+		lblctc.setIcon(new ImageIcon(ctc));
+		lblctc.setBounds(0, 0, 450, 244);
+		frame.add(lblctc);
 		
 		progressBar = new JProgressBar();
-		progressBar.setBounds(159, 244, 146, 14);
+		progressBar.setBackground(Color.BLACK);
+		progressBar.setForeground(Color.WHITE);
+		progressBar.setBounds(0, 286, 450, 14);
 		frame.add(progressBar);
 		
 		lblpercentage = new JLabel("");
-		lblpercentage.setBounds(159, 227, 46, 14);
+		lblpercentage.setForeground(Color.WHITE);
+		lblpercentage.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblpercentage.setBounds(370, 257, 68, 22);
 		frame.add(lblpercentage);
 	}
 	public void setProgressBar(int i) {
