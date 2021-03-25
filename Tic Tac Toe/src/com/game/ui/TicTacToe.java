@@ -81,7 +81,7 @@ public class TicTacToe {
 	private void winner() {
 		JFrame f = new JFrame();
 		if (model.getBtn0() == ("X") && model.getBtn1() == ("X") && model.getBtn2() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(f, "Player X Won. 1", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
@@ -91,7 +91,7 @@ public class TicTacToe {
 			score();
 		}
 		if (model.getBtn3() == ("X") && model.getBtn4() == ("X") && model.getBtn5() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(f, "Player X Won. 2", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
@@ -101,7 +101,7 @@ public class TicTacToe {
 			score();
 		}
 		if (model.getBtn6() == ("X") && model.getBtn7() == ("X") && model.getBtn8() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(f, "Player X Won. 3", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
@@ -111,7 +111,7 @@ public class TicTacToe {
 			score();
 		}
 		if (model.getBtn0() == ("X") && model.getBtn3() == ("X") && model.getBtn6() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(f, "Player X Won. 4", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
@@ -120,18 +120,18 @@ public class TicTacToe {
 			model.setCountO(model.getCountO() + 1);
 			score();
 		}
-		if (model.getBtn0() == ("X") && model.getBtn4() == ("X") && model.getBtn8() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+		if (model.getBtn1() == ("X") && model.getBtn4() == ("X") && model.getBtn7() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won. 5", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
-		if (model.getBtn0() == ("O") && model.getBtn4() == ("O") && model.getBtn8() == ("O")) {
+		if (model.getBtn1() == ("O") && model.getBtn4() == ("O") && model.getBtn7() == ("O")) {
 			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountO(model.getCountO() + 1);
 			score();
 		}
 		if (model.getBtn2() == ("X") && model.getBtn5() == ("X") && model.getBtn8() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(f, "Player X Won. 6", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
@@ -140,18 +140,18 @@ public class TicTacToe {
 			model.setCountO(model.getCountO() + 1);
 			score();
 		}
-		if (model.getBtn1() == ("X") && model.getBtn4() == ("X") && model.getBtn8() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+		if (model.getBtn0() == ("X") && model.getBtn4() == ("X") && model.getBtn8() == ("X")) {
+			JOptionPane.showMessageDialog(f, "Player X Won. 7", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
-		if (model.getBtn1() == ("O") && model.getBtn4() == ("O") && model.getBtn8() == ("O")) {
+		if (model.getBtn0() == ("O") && model.getBtn4() == ("O") && model.getBtn8() == ("O")) {
 			JOptionPane.showMessageDialog(f, "Player O Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountO(model.getCountO() + 1);
 			score();
 		}
 		if (model.getBtn2() == ("X") && model.getBtn4() == ("X") && model.getBtn6() == ("X")) {
-			JOptionPane.showMessageDialog(f, "Player X Won.", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(f, "Player X Won. 8", "Tic Tac Toe", JOptionPane.WARNING_MESSAGE);
 			model.setCountX(model.getCountX() + 1);
 			score();
 		}
@@ -271,7 +271,7 @@ public class TicTacToe {
 		});
 
 		JButton btn_6 = new JButton("");
-		btn_6.setForeground(Color.LIGHT_GRAY);
+		btn_6.setForeground(Color.BLACK);
 		btn_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn_6.setText(model.getStartString());
