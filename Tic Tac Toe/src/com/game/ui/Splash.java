@@ -66,7 +66,7 @@ public class Splash extends JFrame {
 		frame.setLayout(null);
 		
 		JLabel lblctc = new JLabel("");
-		Image ctc = new ImageIcon(this.getClass().getResource("/CTC.jpg")).getImage();
+		Image ctc = new ImageIcon(this.getClass().getResource("/CTC.gif")).getImage();
 		lblctc.setIcon(new ImageIcon(ctc));
 		lblctc.setBounds(0, 0, 450, 244);
 		frame.add(lblctc);

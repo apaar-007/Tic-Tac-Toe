@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 import java.awt.SystemColor;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class TicTacToe {
 
@@ -357,7 +358,7 @@ public class TicTacToe {
 				btn_8.setBackground(Color.LIGHT_GRAY);
 			}
 		});
-		Image btReset = new ImageIcon(this.getClass().getResource("/reset.jpg")).getImage();
+		Image btReset = new ImageIcon(this.getClass().getResource("/reset.png")).getImage();
 		btnReset.setIcon(new ImageIcon(btReset));
 
 		JButton btnExit = new JButton("");
@@ -399,59 +400,68 @@ public class TicTacToe {
 		Image img = new ImageIcon(this.getClass().getResource("/Logo.gif")).getImage();
 		logo.setIcon(new ImageIcon(img));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addComponent(logo, GroupLayout.PREFERRED_SIZE, 855, Short.MAX_VALUE).addGap(167))
-				.addGroup(
-						groupLayout.createSequentialGroup().addGap(114)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-										.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-										.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-								.addGap(12)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-										.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-										.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-								.addGap(12)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-										.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-										.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-								.addGap(104)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(panel, GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-										.addGroup(groupLayout.createSequentialGroup().addGap(31)
-												.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 80, Short.MAX_VALUE)
-												.addGap(67)
-												.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 86, Short.MAX_VALUE)
-												.addGap(40)))
-								.addGap(161)));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGap(114)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+					.addGap(12)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+					.addGap(12)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+					.addGap(104)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(31)
+							.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+							.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+							.addGap(36)))
+					.addGap(161))
+				.addComponent(logo, GroupLayout.PREFERRED_SIZE, 1022, Short.MAX_VALUE)
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addComponent(logo, GroupLayout.PREFERRED_SIZE, 293, Short.MAX_VALUE).addGap(24)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE).addGap(13)
-										.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(12)
-										.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE).addGap(13)
-										.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(12)
-										.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(14)
-										.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE).addGap(13)
-										.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addGap(31)
-										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 25, Short.MAX_VALUE)
-												.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 25,
-														Short.MAX_VALUE))))
-						.addGap(112)));
+					.addComponent(logo, GroupLayout.PREFERRED_SIZE, 299, Short.MAX_VALUE)
+					.addGap(24)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+							.addGap(13)
+							.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+							.addGap(12)
+							.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+							.addGap(13)
+							.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+							.addGap(12)
+							.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+							.addGap(14)
+							.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+							.addGap(13)
+							.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+							.addGap(31)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE)
+								.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE))))
+					.addGap(112))
+		);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(gl_panel
 				.createSequentialGroup().addGap(9)
