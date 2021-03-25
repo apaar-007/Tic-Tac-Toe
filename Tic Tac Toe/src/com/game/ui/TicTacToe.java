@@ -1,8 +1,10 @@
 package com.game.ui;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -15,6 +17,9 @@ import com.game.beans.ModelTicTacToe;
 
 import java.awt.Color;
 import javax.swing.JTextField;
+import java.awt.SystemColor;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class TicTacToe {
 
@@ -148,10 +153,11 @@ public class TicTacToe {
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
+		frame.getContentPane().setBackground(Color.BLACK);
 		frame.getContentPane().setForeground(Color.DARK_GRAY);
-		frame.setBounds(100, 100, 754, 511);
+		frame.setBounds(100, 100, 1028, 747);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 
 		JButton btn_0 = new JButton("");
 		btn_0.addActionListener(new ActionListener() {
@@ -168,8 +174,6 @@ public class TicTacToe {
 				winner();
 			}
 		});
-		btn_0.setBounds(12, 124, 80, 66);
-		frame.getContentPane().add(btn_0);
 
 		JButton btn_1 = new JButton("");
 		btn_1.addActionListener(new ActionListener() {
@@ -188,8 +192,6 @@ public class TicTacToe {
 			}
 
 		});
-		btn_1.setBounds(106, 124, 80, 66);
-		frame.getContentPane().add(btn_1);
 
 		JButton btn_2 = new JButton("");
 		btn_2.addActionListener(new ActionListener() {
@@ -207,8 +209,6 @@ public class TicTacToe {
 			}
 
 		});
-		btn_2.setBounds(196, 124, 80, 66);
-		frame.getContentPane().add(btn_2);
 
 		JButton btn_3 = new JButton("");
 		btn_3.addActionListener(new ActionListener() {
@@ -227,8 +227,6 @@ public class TicTacToe {
 			}
 
 		});
-		btn_3.setBounds(12, 203, 80, 66);
-		frame.getContentPane().add(btn_3);
 
 		JButton btn_4 = new JButton("");
 		btn_4.addActionListener(new ActionListener() {
@@ -245,8 +243,6 @@ public class TicTacToe {
 				winner();
 			}
 		});
-		btn_4.setBounds(104, 203, 80, 66);
-		frame.getContentPane().add(btn_4);
 
 		JButton btn_5 = new JButton("");
 		btn_5.addActionListener(new ActionListener() {
@@ -263,10 +259,9 @@ public class TicTacToe {
 				winner();
 			}
 		});
-		btn_5.setBounds(196, 203, 80, 66);
-		frame.getContentPane().add(btn_5);
 
 		JButton btn_6 = new JButton("");
+		btn_6.setForeground(Color.LIGHT_GRAY);
 		btn_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn_6.setText(model.getStartString());
@@ -281,8 +276,6 @@ public class TicTacToe {
 				winner();
 			}
 		});
-		btn_6.setBounds(12, 282, 80, 66);
-		frame.getContentPane().add(btn_6);
 
 		JButton btn_7 = new JButton("");
 		btn_7.addActionListener(new ActionListener() {
@@ -299,8 +292,6 @@ public class TicTacToe {
 				winner();
 			}
 		});
-		btn_7.setBounds(104, 282, 80, 66);
-		frame.getContentPane().add(btn_7);
 
 		JButton btn_8 = new JButton("");
 		btn_8.addActionListener(new ActionListener() {
@@ -317,10 +308,9 @@ public class TicTacToe {
 				winner();
 			}
 		});
-		btn_8.setBounds(196, 282, 80, 66);
-		frame.getContentPane().add(btn_8);
 
-		JButton btnReset = new JButton("Reset");
+		JButton btnReset = new JButton("");
+		btnReset.setBackground(SystemColor.control);
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				model.setBtn0(null);
@@ -357,14 +347,15 @@ public class TicTacToe {
 				btn_8.setBackground(Color.LIGHT_GRAY);
 			}
 		});
-		btnReset.setBounds(344, 380, 97, 25);
-		frame.getContentPane().add(btnReset);
-
-		JButton btnExit = new JButton("Exit");
+		Image btReset = new ImageIcon(this.getClass().getResource("/reset.jpg")).getImage();
+		btnReset.setIcon(new ImageIcon(btReset));
+		
+		JButton btnExit = new JButton("");
+		btnExit.setBackground(Color.RED);
 		btnExit.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
-				JFrame exitFrame = new JFrame("Exit");
+				JFrame exitFrame = new JFrame("");
 
 				if (JOptionPane.showConfirmDialog(exitFrame, "Confirm if you want to Exit", "Tic Tac Toe",
 						JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
@@ -372,32 +363,130 @@ public class TicTacToe {
 				}
 			}
 		});
-		btnExit.setBounds(544, 380, 97, 25);
-		frame.getContentPane().add(btnExit);
+		Image btExit = new ImageIcon(this.getClass().getResource("/exit.png")).getImage();
+		btnExit.setIcon(new ImageIcon(btExit));
 
 		JPanel panel = new JPanel();
+		panel.setBackground(SystemColor.control);
 		panel.setForeground(Color.GRAY);
 		panel.setBorder(new LineBorder(new Color(255, 0, 0), 3, true));
-		panel.setBounds(344, 102, 304, 227);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
 
-		JLabel lblone = new JLabel("Player One");
-		lblone.setBounds(12, 64, 73, 16);
-		panel.add(lblone);
+		JLabel lblone = new JLabel("");
+		Image pl1 = new ImageIcon(this.getClass().getResource("/player1.png")).getImage();
+		lblone.setIcon(new ImageIcon(pl1));
 
-		JLabel lbltwo = new JLabel("Player Two");
-		lbltwo.setBounds(12, 123, 73, 16);
-		panel.add(lbltwo);
+		JLabel lbltwo = new JLabel("");
+		Image pl2 = new ImageIcon(this.getClass().getResource("/player2.png")).getImage();
+		lbltwo.setIcon(new ImageIcon(pl2));
 
 		txtplayerOne = new JTextField();
-		txtplayerOne.setBounds(126, 61, 116, 22);
-		panel.add(txtplayerOne);
 		txtplayerOne.setColumns(10);
 
 		txtplayerTwo = new JTextField();
 		txtplayerTwo.setColumns(10);
-		txtplayerTwo.setBounds(126, 120, 116, 22);
-		panel.add(txtplayerTwo);
+
+		JLabel logo = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/Logo.gif")).getImage();
+		logo.setIcon(new ImageIcon(img));
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addComponent(logo, GroupLayout.PREFERRED_SIZE, 855, Short.MAX_VALUE)
+					.addGap(167))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(114)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+					.addGap(12)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+					.addGap(12)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+						.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+					.addGap(104)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(31)
+							.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 80, Short.MAX_VALUE)
+							.addGap(67)
+							.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 86, Short.MAX_VALUE)
+							.addGap(40)))
+					.addGap(161))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addComponent(logo, GroupLayout.PREFERRED_SIZE, 293, Short.MAX_VALUE)
+					.addGap(24)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btn_0, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+							.addGap(13)
+							.addComponent(btn_3, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+							.addGap(12)
+							.addComponent(btn_6, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btn_1, GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+							.addGap(13)
+							.addComponent(btn_4, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+							.addGap(12)
+							.addComponent(btn_7, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btn_2, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+							.addGap(14)
+							.addComponent(btn_5, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+							.addGap(13)
+							.addComponent(btn_8, GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(31)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 25, Short.MAX_VALUE)
+								.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 25, Short.MAX_VALUE))))
+					.addGap(112))
+		);
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(9)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup()
+							.addComponent(lblone, GroupLayout.PREFERRED_SIZE, 88, Short.MAX_VALUE)
+							.addGap(26)
+							.addComponent(txtplayerOne))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addComponent(lbltwo, GroupLayout.PREFERRED_SIZE, 88, Short.MAX_VALUE)
+							.addGap(26)
+							.addComponent(txtplayerTwo, GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
+					.addGap(59))
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(58)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(3)
+							.addComponent(lblone, GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE))
+						.addComponent(txtplayerOne))
+					.addGap(37)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(3)
+							.addComponent(lbltwo, GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE))
+						.addComponent(txtplayerTwo))
+					.addGap(70))
+		);
+		panel.setLayout(gl_panel);
+		frame.getContentPane().setLayout(groupLayout);
 	}
 }
