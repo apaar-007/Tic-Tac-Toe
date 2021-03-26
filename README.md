@@ -5,4 +5,5 @@ This is a Simple Tic Tac Toe Game can be used as minor project for collage Stude
  -Eclipse <br />
  -Jdk 1.8 and above
 # Preview
-  <img src="https://imgur.com/idYGNmK" alt="Preview"/>
+<img src="https://i.imgur.com/idYGNmK.png" title="preview" />
+  
