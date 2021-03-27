@@ -1,7 +1,11 @@
 package com.game.ui;
 
-import java.awt.EventQueue;
-import java.awt.Frame;
+/**
+ * @author Devloped by- Apaar Gupta, Vaibhav Gupta
+ * 		A Project by- Code To Contribute
+ * 		To join Community- https://discord.gg/sXq63HSx
+ */
+
 import java.awt.Image;
 
 import javax.swing.JFrame;

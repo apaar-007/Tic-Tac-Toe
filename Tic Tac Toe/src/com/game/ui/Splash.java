@@ -35,24 +35,6 @@ public class Splash extends JFrame {
 		Splash.progressBar = progressBar;
 	}
 	
-	
-	
-//	public static void main(String[] args) {
-//		Splash splash = new Splash();
-//		splash.setVisible(true);
-//		for (int i = 0; i <= 100; i++) {
-//			try {
-//				Thread.sleep(i);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			splash.progressBar.setValue(i);
-//		}
-//	}
-	
-	
-	
 	public Splash() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
